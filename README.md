@@ -19,16 +19,85 @@ Replace this paragraph with your own summary of what your version does.
 
 Explain your design in plain language.
 
+The system is a content-based music recommender that suggests songs based on how well their features match the preferences of the user. Each song is described using attributes like genre, mood and numerical values associated with energy and tempo. The user also provides a profile of test with the values that are preferred for these features.
+
+The recommender will compare each song to the user profile. Then it assigns a score based on how closely the song will match the user preferences. Then it will rank all songs from highest to lowest score. The songs that are top-scoring will be returned as recommendations.
+
 Some prompts to answer:
 
 - What features does each `Song` use in your system
   - For example: genre, mood, energy, tempo
+
+- genre: the overall category of the song (e.g., pop, rock, lofi)
+- mood: the emotional tone (e.g., happy, chill, intense)
+- energy: how intense or active the song feels (0 to 1)
+- valence: how positive or negative the song feels (0 to 1)
+- danceability: how suitable the song is for dancing (0 to 1)
+- tempo_bpm: the speed of the song in beats per minute
+- acousticness: how acoustic vs electronic the song is (0 to 1)
+
 - What information does your `UserProfile` store
+
+The UserProfile stores the musical preferences of the user. At this time including:
+
+- favorite_genre: the genre the user prefers most
+- favorite_mood: the mood the user prefers
+- target_energy: the desired energy level
+- target_valence: the desired positivity level
+- target_danceability: the preferred level of danceability
+- target_tempo_bpm: the preferred tempo
+- target_acousticness: the preferred acoustic vs electronic feel
+
 - How does your `Recommender` compute a score for each song
+
+The recommender will compute a score for each song using a weighted scoring system.
+
+- It adds points if the song’s genre matches the user’s favorite genre
+- It adds points if the song’s mood matches the user’s preferred mood
+- For numerical features (energy, valence, danceability, tempo, acousticness), it calculates how close the song’s value is to the user’s target value
+- Songs that are closer to the user’s preferences receive higher scores
+
+Each feature contributes a portion of the total score, allowing the system to balance multiple aspects of a song’s “vibe.”
+
 - How do you choose which songs to recommend
+
+After computing scores for all songs, the recommender sorts them from highest to lowest score. The top K songs (for example, the top 3 or top 5) are selected as the final recommendations.
+
+This ranking ensures that the songs that best match the user’s preferences are shown first.
 
 You can include a simple diagram or bullet list if helpful.
 
+### Proposed or Recommended Flow
+
+1. Load song data from `songs.csv`
+2. Store the user's taste profile
+3. Compare each song to the user profile
+4. Compute a weighted score for each song
+5. Rank songs from highest to lowest score
+6. Return the top recommendations
+
+The diagram below shows how user preferences and song features flow through the system:
+
+```mermaid
+flowchart LR
+    A[User Profile] --> C[Scoring Function]
+    B[Song Features from songs.csv] --> C
+    C --> D[Rank Songs by Score]
+    D --> E[Top K Recommendations]
+```
+
+### Algorithm Recipe
+
+- Add 2.0 points when or if the song genre matches the user's favorite genre
+- Add 1.5 points when or if the song mood matches the user's preferred mood
+- Add similarity-based points for numerical features such as energy, danceability, tempo, acousticness or valence
+- Numerical features are scored on the basis of how close their are to the target values from the user
+- Songs are to be ranked from the highest to lowest total score
+- The top K songs are returned as recommendations
+
+### Potential Biases
+
+A potential bias that comes to mind is that this recommender may over-prioritize and focus on songs that match the favorite genre and mood of the user. As a result of this dataset being small, there are certain genres and moods that may be overrepresented, and this can lead to recommendations that could be considered to be repetitive. The system also assumes all users have similarities in regards to their preference patterns. This may not reflect real-world variations regarding taste.
 ---
 
 ## Getting Started
