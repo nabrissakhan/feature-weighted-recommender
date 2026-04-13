@@ -358,4 +358,4 @@ Because: energy similarity (+1.29), valence similarity (+0.69), danceability sim
 
 ### Screenshot of CLI Output
 
-![Recommender Output](output_image.png)
+![Recommender Output](images/output_image.png)
