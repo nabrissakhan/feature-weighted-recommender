@@ -159,19 +159,23 @@ Overall, the recommender behaves best when there is a balance between categorica
 
 ## Limitations and Risks
 
-Summarize some limitations of your recommender.
+This recommender system has several limitations due to its simplicity and small dataset.
 
-Examples:
+- It only works on a small catalog of songs, which limits the diversity of recommendations.
+- It does not consider lyrics, cultural context, or user listening history, which are important factors in real-world music preference.
+- The system may over-prioritize certain features like genre and mood depending on their weights.
+- It assumes all users can be represented by the same type of preference profile, which may not reflect real-world variation in taste.
 
-- It only works on a tiny catalog
-- It does not understand lyrics or language
-- It might over favor one genre or mood
-
-You will go deeper on this in your model card.
+These limitations mean the system can produce reasonable recommendations, but it is not as nuanced or adaptive as real-world platforms like Spotify or YouTube.
 
 ---
 
+
 ## Reflection
+
+For a more detailed analysis of the recommender system, including evaluation, biases, limitations, and intended use, see the Model Card:
+
+[Model Card](model_card.md)
 
 Read and complete `model_card.md`:
 
@@ -182,6 +186,9 @@ Write 1 to 2 paragraphs here about what you learned:
 - about how recommenders turn data into predictions
 - about where bias or unfairness could show up in systems like this
 
+This project helped me understand how recommender systems turn user preferences into predictions using a combination of rules and data. By assigning weights to different features like genre, mood, and energy, I was able to see how small changes in logic can significantly impact the recommendations. It showed me that even simple scoring systems can feel effective if the features are well chosen.
+
+I also learned how bias can appear in recommendation systems. For example, giving too much weight to genre can create a filter bubble where users only see similar types of content, while reducing that weight can lead to more varied but less targeted recommendations. This made me realize that designing a recommender system is not just about accuracy, but also about balancing user expectations, variation, and fairness.
 
 ---
 
