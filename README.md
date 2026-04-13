@@ -143,6 +143,18 @@ Use this section to document the experiments you ran. For example:
 - What happened when you added tempo or valence to the score
 - How did your system behave for different types of users
 
+## Experiments You Tried
+
+I ran several experiments to understand how different features and weights affect the recommender’s behavior.
+
+First, I tested the system with three different user profiles: High-Energy Pop, Chill Lofi, and Intense Rock. The recommender performed well when there were strong matches in both genre and mood. For example, Sunrise City ranked highest for High-Energy Pop, Library Rain and Midnight Coding ranked highest for Chill Lofi, and Storm Runner ranked highest for Intense Rock. This showed that the system can correctly identify songs that match a user’s core preferences.
+
+Next, I experimented with reducing the genre weight from 2.0 to 0.5. This made the recommender rely more on mood and numeric features like energy, valence, danceability, tempo, and acousticness. As a result, cross-genre songs appeared more frequently in the top recommendations. For example, Rooftop Lights ranked above Gym Hero in the High-Energy Pop profile, and Spacewalk Thoughts ranked above Focus Flow in the Chill Lofi profile, even without matching genre. This showed that lowering the genre weight increases flexibility but can reduce alignment with a user’s stated genre preference.
+
+I also observed the impact of adding multiple numeric features such as valence, danceability, tempo, and acousticness. These features helped the recommender capture a song’s overall “vibe” more accurately. Even when genre or mood did not match exactly, songs with similar energy, tempo, and emotional tone were still recommended. This made the system more nuanced and realistic compared to using only categorical features.
+
+Overall, the recommender behaves best when there is a balance between categorical features (genre and mood) and numeric features (energy, valence, danceability, tempo, acousticness). Higher weights on genre make recommendations more strict and predictable, while lower weights allow for more diverse, vibe-based recommendations.
+
 ---
 
 ## Limitations and Risks
@@ -277,4 +289,6 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
+
+--
 
