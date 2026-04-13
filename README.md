@@ -86,7 +86,10 @@ flowchart LR
 
 ### Potential Biases
 
-A potential bias that comes to mind is that this recommender may over-prioritize and focus on songs that match the favorite genre and mood of the user. As a result of this dataset being small, there are certain genres and moods that may be overrepresented, and this can lead to recommendations that could be considered to be repetitive. The system also assumes all users have similarities in regards to their preference patterns. This may not reflect real-world variations regarding taste.
+- The model may over-prioritize genre and mood, reducing recommendation variation.
+- A small dataset can cause certain genres or moods to be overrepresented, leading to repetitive outputs.
+- The system assumes a single, static preference profile, which does not capture real-world variability in user taste.
+
 ---
 
 ## Getting Started
