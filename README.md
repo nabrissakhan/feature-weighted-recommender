@@ -292,3 +292,63 @@ A few sentences about what you learned:
 
 --
 
+## 10. Sample Output
+
+
+=== High-Energy Pop ===
+
+Sunrise City - Score: 8.21
+Because: genre match (+2.0), mood match (+1.5), energy similarity (+1.47), valence similarity (+0.94), danceability similarity (+0.91), acousticness similarity (+0.66), tempo similarity (+0.73)
+
+Gym Hero - Score: 6.22
+Because: genre match (+2.0), energy similarity (+1.30), valence similarity (+0.87), danceability similarity (+0.82), acousticness similarity (+0.56), tempo similarity (+0.66)
+
+Rooftop Lights - Score: 6.16
+Because: mood match (+1.5), energy similarity (+1.44), valence similarity (+0.91), danceability similarity (+0.88), acousticness similarity (+0.71), tempo similarity (+0.72)
+
+Night Drive Loop - Score: 4.35
+Because: energy similarity (+1.42), valence similarity (+0.59), danceability similarity (+0.97), acousticness similarity (+0.69), tempo similarity (+0.68)
+
+Storm Runner - Score: 3.99
+Because: energy similarity (+1.33), valence similarity (+0.58), danceability similarity (+0.96), acousticness similarity (+0.60), tempo similarity (+0.51)
+
+
+=== Chill Lofi ===
+
+Library Rain - Score: 8.31
+Because: genre match (+2.0), mood match (+1.5), energy similarity (+1.50), valence similarity (+1.00), danceability similarity (+0.92), acousticness similarity (+0.71), tempo similarity (+0.69)
+
+Midnight Coding - Score: 8.15
+Because: genre match (+2.0), mood match (+1.5), energy similarity (+1.40), valence similarity (+0.96), danceability similarity (+0.88), acousticness similarity (+0.68), tempo similarity (+0.73)
+
+Focus Flow - Score: 6.80
+Because: genre match (+2.0), energy similarity (+1.42), valence similarity (+0.99), danceability similarity (+0.90), acousticness similarity (+0.73), tempo similarity (+0.75)
+
+Spacewalk Thoughts - Score: 6.02
+Because: mood match (+1.5), energy similarity (+1.40), valence similarity (+0.95), danceability similarity (+0.91), acousticness similarity (+0.66), tempo similarity (+0.60)
+
+Coffee Shop Stories - Score: 4.68
+Because: energy similarity (+1.47), valence similarity (+0.89), danceability similarity (+0.96), acousticness similarity (+0.68), tempo similarity (+0.68)
+
+
+=== Intense Rock ===
+
+Storm Runner - Score: 8.28
+Because: genre match (+2.0), mood match (+1.5), energy similarity (+1.48), valence similarity (+0.98), danceability similarity (+0.94), acousticness similarity (+0.68), tempo similarity (+0.70)
+
+Gym Hero - Score: 5.70
+Because: mood match (+1.5), energy similarity (+1.46), valence similarity (+0.73), danceability similarity (+0.72), acousticness similarity (+0.64), tempo similarity (+0.65)
+
+Night Drive Loop - Score: 4.36
+Because: energy similarity (+1.27), valence similarity (+0.99), danceability similarity (+0.87), acousticness similarity (+0.73), tempo similarity (+0.49)
+
+Sunrise City - Score: 4.13
+Because: energy similarity (+1.38), valence similarity (+0.66), danceability similarity (+0.81), acousticness similarity (+0.73), tempo similarity (+0.55)
+
+Rooftop Lights - Score: 3.99
+Because: energy similarity (+1.29), valence similarity (+0.69), danceability similarity (+0.78), acousticness similarity (+0.64), tempo similarity (+0.59)
+
+
+### Screenshot of CLI Output
+
+![Recommender Output](output_image.png)
